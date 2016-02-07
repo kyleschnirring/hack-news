@@ -1,0 +1,20 @@
+{
+  "name": "hack-news",
+  "version": "1.0.0",
+  "description": "A simple library of methods to help you interact with the Hacker News API. There's more on the way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hacker",
+    "news",
+    "top",
+    "ten",
+    "npm",
+    "hack-news"
+  ],
+  "author": "Kyle Schnirring",
+  "license": "MIT",
+  "dependencies": {}
+}
