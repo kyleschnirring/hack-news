@@ -1,10 +1,10 @@
-##H2 Installation
+## Installation
 
 ```javascript
 $ npm install hack-news
 ```
 
-##H2 Usage
+## Usage
 The examples below show how to access the IDs of the top stories on Hacker News.
 
 ```javascript
