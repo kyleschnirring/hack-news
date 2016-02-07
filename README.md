@@ -5,7 +5,7 @@ $ npm install hack-news
 ```
 
 ## Usage
-The examples below show how to access the IDs of the top stories on Hacker News.
+The examples below shows how to access the IDs of the top stories on Hacker News.
 
 ```javascript
 var hn = require('hack-news');
