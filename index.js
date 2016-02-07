@@ -10,7 +10,6 @@ exports.numberOfTopStories = function (numberOfArticles) {
           : value;
       });
       var finishedStories = stories.splice(0, numberOfArticles);
-      console.log(finishedStories);
       return finishedStories;
     });
 
