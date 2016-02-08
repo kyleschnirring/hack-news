@@ -1,7 +1,7 @@
 const https = require('https');
 
 //get specific number of top stories
-exports.numberOfTopStories = function (numberOfArticles) {
+exports.numberOfTopStories = function (numberOfArticles, callback) {
 
   if (numberOfArticles && typeof numberOfArticles != "number") {
     throw new Error("The number paramter must be a number");
@@ -13,8 +13,7 @@ exports.numberOfTopStories = function (numberOfArticles) {
           ? new Buffer(value.data)
           : value;
       });
-      console.log(stories);
-      return stories.splice(0, numberOfArticles);
+      callback(stories.splice(0, numberOfArticles));
     });
 
   }).on('error', (e) => {
@@ -23,7 +22,7 @@ exports.numberOfTopStories = function (numberOfArticles) {
 }
 
 //get all top stories
-exports.allTopStories = function () {
+exports.allTopStories = function (callback) {
 
   https.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty', (res) => {
 
@@ -33,8 +32,7 @@ exports.allTopStories = function () {
           ? new Buffer(value.data)
           : value;
       });
-      console.log(stories);
-      return stories;
+      callback(stories);
     });
 
   }).on('error', (e) => {
