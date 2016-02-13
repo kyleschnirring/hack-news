@@ -32,7 +32,7 @@ The examples below shows how to access the IDs of the new stories on Hacker News
 
 ```javascript
 //Returns an array of all the article ids for the new stories on hacker news
-index.allNewStories( (allTheStories, error) => {
+hn.allNewStories( (allTheStories, error) => {
   if (error) {
     console.log(error);
   }
@@ -41,7 +41,7 @@ index.allNewStories( (allTheStories, error) => {
 
 /*Returns an array of article ids in the amount of your choice.
 So if you wanted the top ten newest stories on Hacker News it would look like this.*/
-index.numberOfNewStories(10, (numOfStories, error) => {
+hn.numberOfNewStories(10, (numOfStories, error) => {
   if (error) {
     console.log(error);
   }
