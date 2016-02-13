@@ -1,0 +1,24 @@
+{
+  "name": "hack-news",
+  "version": "1.0.7",
+  "description": "A simple library of methods to help you interact with the Hacker News API. There's more on the way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyleschnirring/hack-news.git"
+  },
+  "keywords": [
+    "hacker",
+    "news",
+    "top",
+    "ten",
+    "npm",
+    "hack-news"
+  ],
+  "author": "Kyle Schnirring",
+  "license": "MIT",
+  "dependencies": {}
+}
