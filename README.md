@@ -12,6 +12,7 @@ The examples below shows how to access the IDs of the top stories on Hacker News
 var hn = require('hack-news');
 
 //Returns an array of all the article ids for the top stories on hacker news
+
 hn.allTopStories( (allTheStories, error) => {
   if (error) {
     console.log(error);
@@ -21,6 +22,7 @@ hn.allTopStories( (allTheStories, error) => {
 
 /*Returns an array of article ids in the amount of your choice.
 So if you wanted the top ten stories on Hacker News it would look like this.*/
+
 hn.numberOfTopStories(10, (numberOfStories, error) => {
   if (error) {
     console.log(error);
@@ -31,7 +33,10 @@ hn.numberOfTopStories(10, (numberOfStories, error) => {
 The examples below shows how to access the IDs of the new stories on Hacker News.
 
 ```javascript
+var hn = require('hack-news');
+
 //Returns an array of all the article ids for the new stories on hacker news
+
 hn.allNewStories( (allTheStories, error) => {
   if (error) {
     console.log(error);
@@ -41,6 +46,7 @@ hn.allNewStories( (allTheStories, error) => {
 
 /*Returns an array of article ids in the amount of your choice.
 So if you wanted the top ten newest stories on Hacker News it would look like this.*/
+
 hn.numberOfNewStories(10, (numOfStories, error) => {
   if (error) {
     console.log(error);
