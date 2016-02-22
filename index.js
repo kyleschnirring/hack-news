@@ -103,3 +103,31 @@ callback = callback || () => {};
     });
   });
 }
+
+//ask, show or job stories
+exports.askShowOrJobStories = function (asj, callback) {
+
+  if (asj && typeof asj !== "string") {
+    throw new Error("The paramter must be a string and be one of the following ask, show or job");
+  }
+
+  callback = callback || () => {};
+   return new Promise((resolve, reject) => {
+
+       https.get('https://hacker-news.firebaseio.com/v0/' + asj +'stories.json?print=pretty', (res) => {
+         res.on('data', (d) => {
+           const stories = JSON.parse(d, (key, value) => {
+             return value && value.type === 'Buffer'
+               ? new Buffer(value.data)
+               : value;
+           });
+           resolve(stories);
+           callback(stories);
+         });
+
+    }).on('error', (e) => {
+      reject(e);
+      callback(e);
+    });
+  });
+}

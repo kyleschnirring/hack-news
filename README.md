@@ -66,4 +66,24 @@ hn.numberOfNewStories(10, (numOfStories, error) => {
 //Using Promises
 hn.numberOfNewStories(10).then(numberOfStories => {console.log(numberOfStories);});
 ```
+
+####Ask, Show and Job Stories
+The examples below shows how to access the IDs of Ask, Show and Job stories on Hacker News.
+
+```javascript
+var hn = require('hack-news');
+
+//Returns an array of all the article ids for Ask, Show and Job stories on hacker news.
+//Just place 'ask', 'show', or 'job' as the first parameter to retrieve the array you need.
+hn.askShowOrJobStories('ask', (asj, error) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log(asj);
+});
+
+//Using Promises
+hn.askShowOrJobStories('show').then(asj => {console.log(asj);});
+```
+
 This is it for now but stay tuned I will be adding a lot more.
