@@ -84,6 +84,17 @@ hn.askShowOrJobStories('ask', (asj, error) => {
 
 //Using Promises
 hn.askShowOrJobStories('show').then(asj => {console.log(asj);});
+
+//If you wanted the Top Ten Ask, Show, Job you ca use the numbOfAskShowOrJobStories method like so.
+hn.numbOfAskShowOrJobStories('show', 10, (asj, error) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log(asj);
+});
+
+//Using Promises
+hn.numbOfAskShowOrJobStories('job', 10).then(asj => {console.log(asj);});
 ```
 
 This is it for now but stay tuned I will be adding a lot more.
