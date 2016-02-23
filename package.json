@@ -4,7 +4,7 @@
   "description": "A simple library of methods to help you interact with the Hacker News API. There's more on the way.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests/test.js -w"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   ],
   "author": "Kyle Schnirring",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
