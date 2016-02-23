@@ -75,7 +75,7 @@ var hn = require('hack-news');
 
 //Returns an array of all the article ids for Ask, Show and Job stories on hacker news.
 //Just place 'ask', 'show', or 'job' as the first parameter to retrieve the array you need.
-hn.askShowOrJobStories('ask', (asj, error) => {
+hn.asjStories('ask', (asj, error) => {
   if (error) {
     console.log(error);
   }
@@ -83,10 +83,10 @@ hn.askShowOrJobStories('ask', (asj, error) => {
 });
 
 //Using Promises
-hn.askShowOrJobStories('show').then(asj => {console.log(asj);});
+hn.asjStories('show').then(asj => {console.log(asj);});
 
 //If you wanted the Top Ten Ask, Show, Job you ca use the numbOfAskShowOrJobStories method like so.
-hn.numbOfAskShowOrJobStories('show', 10, (asj, error) => {
+hn.numbOfAsjStories('show', 10, (asj, error) => {
   if (error) {
     console.log(error);
   }
@@ -94,7 +94,7 @@ hn.numbOfAskShowOrJobStories('show', 10, (asj, error) => {
 });
 
 //Using Promises
-hn.numbOfAskShowOrJobStories('job', 10).then(asj => {console.log(asj);});
+hn.numbOfAsjStories('job', 10).then(asj => {console.log(asj);});
 ```
 
 This is it for now but stay tuned I will be adding a lot more.

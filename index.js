@@ -105,7 +105,7 @@ callback = callback || () => {};
 }
 
 //ask, show or job stories
-exports.askShowOrJobStories = function (asj, callback) {
+exports.asjStories = function (asj, callback) {
 
   if (asj && typeof asj !== "string") {
     throw new Error("The paramter must be a string and be one of the following ask, show or job");
@@ -132,7 +132,7 @@ exports.askShowOrJobStories = function (asj, callback) {
   });
 }
 //ask show or job top number of stories
-exports.numbOfAskShowOrJobStories = function (asj, numberOfArticles, callback) {
+exports.numbOfAsjStories = function (asj, numberOfArticles, callback) {
 
   if (asj && typeof asj != "string") {
     throw new Error("The paramter must be a string and be one of the following ask, show or job");
