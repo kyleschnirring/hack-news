@@ -162,3 +162,27 @@ exports.numbOfAsjStories = function (asj, numberOfArticles, callback) {
     });
   });
 }
+
+//get a story with a specific id
+exports.storyWithId = function (id, callback) {
+
+callback = callback || () => {};
+   return new Promise((resolve, reject) => {
+
+     https.get('https://hacker-news.firebaseio.com/v0/item/'+ id +'.json?print=pretty', (res) => {
+       res.on('data', (d) => {
+         const story = JSON.parse(d, (key, value) => {
+           return value && value.type === 'Buffer'
+             ? new Buffer(value.data)
+             : value;
+         });
+         resolve(story);
+         callback(story);
+      });
+
+    }).on('error', (e) => {
+      reject(e);
+      callback(e);
+    });
+  });
+}
