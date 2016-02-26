@@ -75,7 +75,7 @@ var hn = require('hack-news');
 
 //Returns an array of all the article ids for Ask, Show and Job stories on hacker news.
 //Just place 'ask', 'show', or 'job' as the first parameter to retrieve the array you need.
-hn.asjStories('ask', (asj, error) => {
+hn.asjStories('ask', (error, asj) => {
   if (error) {
     console.log(error);
   }
