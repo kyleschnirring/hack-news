@@ -14,7 +14,7 @@ var hn = require('hack-news');
 
 //Returns an array of all the article ids for the top stories on hacker news
 
-hn.allTopStories( (allTheStories, error) => {
+hn.allTopStories( (error, allTheStories) => {
   if (error) {
     console.log(error);
   }
@@ -27,7 +27,7 @@ hn.allTopStories().then(stories => {console.log(stories);});
 /*Returns an array of article ids in the amount of your choice.
 So if you wanted the top ten stories on Hacker News it would look like this.*/
 
-hn.numberOfTopStories(10, (numberOfStories, error) => {
+hn.numberOfTopStories(10, (error, numberOfStories) => {
   if (error) {
     console.log(error);
   }
@@ -44,7 +44,7 @@ The examples below show how to access the IDs of the new stories on Hacker News.
 var hn = require('hack-news');
 
 //Returns an array of all the article ids for the new stories on hacker news
-hn.allNewStories( (allTheStories, error) => {
+hn.allNewStories( (error, allTheStories) => {
   if (error) {
     console.log(error);
   }
@@ -56,7 +56,7 @@ hn.allNewStories().then(stories => {console.log(stories);});
 
 /*Returns an array of article ids in the amount of your choice.
 So if you wanted the top ten newest stories on Hacker News it would look like this.*/
-hn.numberOfNewStories(10, (numOfStories, error) => {
+hn.numberOfNewStories(10, (error, numOfStories) => {
   if (error) {
     console.log(error);
   }
@@ -64,7 +64,7 @@ hn.numberOfNewStories(10, (numOfStories, error) => {
 });
 
 //Using Promises
-hn.numberOfNewStories(10).then(numberOfStories => {console.log(numberOfStories);});
+hn.numberOfNewStories(10).then(numOfStories => {console.log(numOfStories);});
 ```
 
 ####Ask, Show and Job Stories
@@ -86,7 +86,7 @@ hn.asjStories('ask', (asj, error) => {
 hn.asjStories('show').then(asj => {console.log(asj);});
 
 //If you wanted the Top Ten Ask, Show, Job you ca use the numbOfAskShowOrJobStories method like so.
-hn.numbOfAsjStories('show', 10, (asj, error) => {
+hn.numbOfAsjStories('show', 10, (error, asj) => {
   if (error) {
     console.log(error);
   }
@@ -105,7 +105,7 @@ the ID method with the other methods provided.
 var hn = require('hack-news');
 
 //This will return a object filled with data corresponding to the ID that was used.
-hn.storyWithId(002, (story, error) => {
+hn.storyWithId(002, (error, story) => {
   if (error) {
     console.log(error);
   }
@@ -113,9 +113,9 @@ hn.storyWithId(002, (story, error) => {
 });
 
 //Used with another method
-hn.numberOfNewStories(10, (numOfStories, error) => {
+hn.numberOfNewStories(10, (error, numOfStories) => {
   var myArray = numOfStories;
-  hn.storyWithId(myArray[0], (story, error) => {
+  hn.storyWithId(myArray[0], (error, story) => {
     console.log(story);
   });
 });
