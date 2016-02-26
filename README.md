@@ -128,5 +128,6 @@ hn.numbOfAsjStories('job', 10).then(asj => {
   var myArray = asj;
   hn.storyWithId(myArray[6]).then(story => {console.log(story);});
 });
+```
 
 This is it for now but stay tuned I will be adding a lot more.
