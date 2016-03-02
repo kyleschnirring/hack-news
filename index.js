@@ -166,18 +166,22 @@ exports.numbOfAsjStories = function (asj, numberOfArticles, callback) {
 //get a story with a specific id
 exports.storyWithId = function (id, callback) {
 
+  if (id && typeof id != "number") {
+    throw new Error("The number paramter must be a number");
+  }
+
   callback = callback || () => {};
    return new Promise((resolve, reject) => {
 
        https.get('https://hacker-news.firebaseio.com/v0/item/'+ id +'.json?print=pretty', (res) => {
          res.on('data', (d) => {
-           const stories = JSON.parse(d, (key, value) => {
+           const story = JSON.parse(d, (key, value) => {
              return value && value.type === 'Buffer'
                ? new Buffer(value.data)
                : value;
            });
-           resolve(stories);
-           callback(null, stories);
+           resolve(story);
+           callback(null, story);
         });
 
       }).on('error', (e) => {
@@ -186,3 +190,31 @@ exports.storyWithId = function (id, callback) {
       });
     });
   }
+
+  //get a specific User
+  exports.userWithId = function (id, callback) {
+
+    if (id && typeof id != "string") {
+      throw new Error("The paramter must be a string and be one of the following ask, show or job");
+    }
+
+    callback = callback || () => {};
+     return new Promise((resolve, reject) => {
+
+         https.get('https://hacker-news.firebaseio.com/v0/user/'+ id +'.json?print=pretty', (res) => {
+           res.on('data', (d) => {
+             const user = JSON.parse(d, (key, value) => {
+               return value && value.type === 'Buffer'
+                 ? new Buffer(value.data)
+                 : value;
+             });
+             resolve(user);
+             callback(null, user);
+          });
+
+        }).on('error', (e) => {
+          reject(e);
+          callback(e, null);
+        });
+      });
+    }

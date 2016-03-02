@@ -101,6 +101,25 @@ hn.numbOfAsjStories('job', 10).then(asj => {console.log(asj);});
 The examples below show how to select a single story with its ID you can also use
 the ID method with the other methods provided.
 
+All items have some of the following properties, with required properties in bold:
+
+Field/Description
+id:	The item's unique id.
+deleted:	true if the item is deleted.
+type:	The type of item. One of "job", "story", "comment", "poll", or "pollopt".
+by:	The username of the item's author.
+time:	Creation date of the item, in Unix Time.
+text:	The comment, story or poll text. HTML.
+dead:	true if the item is dead.
+parent:	The item's parent. For comments, either another comment or the relevant story. For pollopts, the relevant poll.
+kids:	The ids of the item's comments, in ranked display order.
+url:	The URL of the story.
+score:	The story's score, or the votes for a pollopt.
+title:	The title of the story, poll or job.
+parts:	A list of related pollopts, in display order.
+descendants:	In the case of stories or polls, the total comment count.
+
+
 ```javascript
 var hn = require('hack-news');
 
@@ -127,6 +146,48 @@ hn.storyWithId(12303).then(story => {console.log(story);});
 hn.numbOfAsjStories('job', 10).then(asj => {
   var myArray = asj;
   hn.storyWithId(myArray[6]).then(story => {console.log(story);});
+});
+```
+
+####Users
+The examples below show how to select a single user with his or hers ID you can also use
+the user method with the other methods provided.
+
+| Field | Description |
+| ----- | :---------: |
+| id |	The user's unique username. Case-sensitive. Required. |
+| delay |	Delay in minutes between a comment's creation and its visibility to other users. |
+| created |	Creation date of the user, in Unix Time. |
+| karma |	The user's karma. |
+| about |	The user's optional self-description. HTML. |
+| submitted |	List of the user's stories, polls and comments. |
+
+```javascript
+var hn = require('hack-news');
+
+//This will return a object filled with data corresponding to the ID that was used.
+hn.userWithId('thefox', (error, user) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log(user);
+});
+
+//Used with another method
+hn.storyWithId(7567, (error, story) => {
+  var myUser = story.by;
+  hn.userWithId(myUser, (error, user) => {
+    console.log(user);
+  });
+});
+
+//Using Promises
+hn.userWithId('thefox').then(user => {console.log(user);});
+
+//Used with another method.
+hn.storyWithId(7875).then(story => {
+  var myUser = story.by;
+  hn.storyWithId(myUser).then(user => {console.log(user);});
 });
 ```
 
