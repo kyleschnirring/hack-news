@@ -103,21 +103,22 @@ the ID method with the other methods provided.
 
 All items have some of the following properties, with required properties in bold:
 
-Field/Description
-id:	The item's unique id.
-deleted:	true if the item is deleted.
-type:	The type of item. One of "job", "story", "comment", "poll", or "pollopt".
-by:	The username of the item's author.
-time:	Creation date of the item, in Unix Time.
-text:	The comment, story or poll text. HTML.
-dead:	true if the item is dead.
-parent:	The item's parent. For comments, either another comment or the relevant story. For pollopts, the relevant poll.
-kids:	The ids of the item's comments, in ranked display order.
-url:	The URL of the story.
-score:	The story's score, or the votes for a pollopt.
-title:	The title of the story, poll or job.
-parts:	A list of related pollopts, in display order.
-descendants:	In the case of stories or polls, the total comment count.
+| Field | Description |
+| ----- | :---------: |
+| id | The item's unique id. |
+| deleted | true if the item is deleted. |
+| type | The type of item. One of "job", "story", "comment", "poll", or "pollopt". |
+| by | The username of the item's author. |
+| time | Creation date of the item, in Unix Time. |
+| text | The comment, story or poll text. HTML. |
+| dead | true if the item is dead. |
+| parent | The item's parent. For comments, either another comment or the relevant story. For pollopts, the relevant poll. |
+| kids | The ids of the item's comments, in ranked display order. |
+| url |	The URL of the story. |
+| score |	The story's score, or the votes for a pollopt. |
+| title |	The title of the story, poll or job. |
+| parts |	A list of related pollopts, in display order. |
+| descendants |	In the case of stories or polls, the total comment count. |
 
 
 ```javascript
@@ -152,6 +153,8 @@ hn.numbOfAsjStories('job', 10).then(asj => {
 ####Users
 The examples below show how to select a single user with his or hers ID you can also use
 the user method with the other methods provided.
+
+All users have some of the following properties.
 
 | Field | Description |
 | ----- | :---------: |
