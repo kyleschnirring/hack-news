@@ -101,7 +101,7 @@ hn.numbOfAsjStories('job', 10).then(asj => {console.log(asj);});
 The examples below show how to select a single story with its ID you can also use
 the ID method with the other methods provided.
 
-All items have some of the following properties, with required properties in bold:
+All items have some of the following properties, with required properties in bold.
 
 | Field | Description |
 | ----- | :---------- |
@@ -154,7 +154,7 @@ hn.numbOfAsjStories('job', 10).then(asj => {
 The examples below show how to select a single user with his or hers ID you can also use
 the user method with the other methods provided.
 
-All users have some of the following properties.
+All users have some of the following properties, with required properties in bold.
 
 | Field | Description |
 | ----- | :---------- |
@@ -164,6 +164,7 @@ All users have some of the following properties.
 | **karma** |	The user's karma. |
 | about |	The user's optional self-description. HTML. |
 | submitted |	List of the user's stories, polls and comments. |
+
 
 ```javascript
 var hn = require('hack-news');
