@@ -105,7 +105,7 @@ All items have some of the following properties, with required properties in bol
 
 | Field | Description |
 | ----- | :---------- |
-| id | The item's unique id. |
+| **id** | The item's unique id. |
 | deleted | true if the item is deleted. |
 | type | The type of item. One of "job", "story", "comment", "poll", or "pollopt". |
 | by | The username of the item's author. |
@@ -158,10 +158,10 @@ All users have some of the following properties.
 
 | Field | Description |
 | ----- | :---------- |
-| id |	The user's unique username. Case-sensitive. Required. |
+| **id** |	The user's unique username. Case-sensitive. Required. |
 | delay |	Delay in minutes between a comment's creation and its visibility to other users. |
-| created |	Creation date of the user, in Unix Time. |
-| karma |	The user's karma. |
+| **created** |	Creation date of the user, in Unix Time. |
+| **karma** |	The user's karma. |
 | about |	The user's optional self-description. HTML. |
 | submitted |	List of the user's stories, polls and comments. |
 
