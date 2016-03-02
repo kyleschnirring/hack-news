@@ -195,4 +195,22 @@ hn.storyWithId(7875).then(story => {
 });
 ```
 
+####Changed items and profiles
+The examples below show how to access the changed or updated items and profiles on Hacker News.
+
+```javascript
+var hn = require('hack-news');
+
+//This will return a object with two properties, one for the items and another for the profiles.
+hn.changedItemsAndProfiles( (error, itemsProfiles) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log(itemsProfiles);
+});
+
+//Using Promises
+hn.changedItemsAndProfiles().then(itemsProfiles => {console.log(itemsProfiles);});
+```
+
 This is it for now but stay tuned I will be adding a lot more.
