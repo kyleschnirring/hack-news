@@ -1,6 +1,6 @@
 {
   "name": "hack-news",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple library of methods to help you interact with the Hacker News API. There's more on the way.",
   "main": "index.js",
   "scripts": {
