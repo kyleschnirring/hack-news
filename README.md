@@ -104,7 +104,7 @@ the ID method with the other methods provided.
 All items have some of the following properties, with required properties in bold:
 
 | Field | Description |
-| ----- | :---------: |
+| ----- | :---------- |
 | id | The item's unique id. |
 | deleted | true if the item is deleted. |
 | type | The type of item. One of "job", "story", "comment", "poll", or "pollopt". |
@@ -157,7 +157,7 @@ the user method with the other methods provided.
 All users have some of the following properties.
 
 | Field | Description |
-| ----- | :---------: |
+| ----- | :---------- |
 | id |	The user's unique username. Case-sensitive. Required. |
 | delay |	Delay in minutes between a comment's creation and its visibility to other users. |
 | created |	Creation date of the user, in Unix Time. |
