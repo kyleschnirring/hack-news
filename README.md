@@ -213,4 +213,20 @@ hn.changedItemsAndProfiles( (error, itemsProfiles) => {
 hn.changedItemsAndProfiles().then(itemsProfiles => {console.log(itemsProfiles);});
 ```
 
-This is it for now but stay tuned I will be adding a lot more.
+####Max Item
+The examples below show how to grab the max item on hacker news.
+
+```javascript
+var hn = require('hack-news');
+
+//This will return the max item.
+hn.maxItem( (error, mItem) => {
+  if (error) {
+    console.log(error);
+  }
+  console.log(mItem);
+});
+
+//Using Promises
+hn.maxItem().then(mItem => {console.log(mItem);});
+```

@@ -242,3 +242,27 @@ exports.storyWithId = function (id, callback) {
         });
       });
     }
+
+    //get max item
+    exports.maxItem = function (callback) {
+
+    callback = callback || () => {};
+       return new Promise((resolve, reject) => {
+
+         https.get('https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty', (res) => {
+           res.on('data', (d) => {
+             const stories = JSON.parse(d, (key, value) => {
+               return value && value.type === 'Buffer'
+                 ? new Buffer(value.data)
+                 : value;
+             });
+             resolve(stories);
+             callback(null, stories);
+          });
+
+        }).on('error', (e) => {
+          reject(e);
+          callback(e, null);
+        });
+      });
+    }
